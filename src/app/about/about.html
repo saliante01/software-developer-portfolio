@@ -1,0 +1,59 @@
+<section id="about" class="py-24 px-6 md:px-16" style="background: #eeece9;">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div>
+      <p style="font-size: 13px; font-weight: 700; letter-spacing: 3px;
+                text-transform: uppercase; color: #999;">
+        Introduction
+      </p>
+      <h2 style="font-family: 'Barlow Condensed', 'Arial Black', Impact, sans-serif;
+                 font-weight: 900; font-size: clamp(42px, 6vw, 72px);
+                 color: #111; margin-top: 8px; letter-spacing: -1px;">
+        Overview.
+      </h2>
+    </div>
+
+    <!-- Descripción -->
+    <p style="margin-top: 20px; font-size: 17px; line-height: 1.85;
+              color: #555; max-width: 680px;">
+      Soy un desarrollador de software enfocado en construir ecosistemas digitales eficientes
+      y visualmente atractivos. Cuento con experiencia sólida en el desarrollo frontend moderno
+      y la integración de arquitecturas backend robustas y escalables. Me apasiona resolver
+      problemas complejos a través de código limpio, mantenible y centrado en la experiencia del usuario.
+    </p>
+
+    <!-- Cards con animación -->
+    <div #cardsSection class="mt-20 flex flex-wrap gap-8 justify-center">
+
+      <div *ngFor="let service of services; let i = index"
+           [style.transition-duration]="'900ms'"
+           [style.transition-property]="'opacity, transform'"
+           [style.transition-timing-function]="'cubic-bezier(0.25, 0.46, 0.45, 0.94)'"
+           [style.opacity]="service.visible ? '1' : '0'"
+           [style.transform]="service.visible ? 'translateX(0)' : 'translateX(-140px)'"
+           style="width: 240px;">
+
+        <div style="background: #2d2d2d; border-radius: 18px;
+                    padding: 48px 32px; min-height: 260px;
+                    display: flex; flex-direction: column;
+                    align-items: center; justify-content: center; gap: 28px;
+                    box-shadow: 0 24px 60px rgba(0,0,0,0.25);">
+
+          <div style="width: 64px; height: 64px; display: flex;
+                      align-items: center; justify-content: center;">
+            <img [src]="service.iconSvg" alt=""
+                 style="width: 52px; height: 52px; filter: invert(1);" />
+          </div>
+
+          <h3 style="color: #fff; font-size: 16px; font-weight: 700;
+                     text-align: center; line-height: 1.4; letter-spacing: 0.3px;">
+            {{ service.title }}
+          </h3>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

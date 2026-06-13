@@ -1,0 +1,195 @@
+<section id="work" class="relative py-24 px-6 md:px-16 overflow-hidden" style="background: #eeece9;">
+
+  <!-- Diagonal negra fondo derecha -->
+  <div class="absolute top-0 right-0 h-full z-0"
+       style="width: 38%; background: #111;
+              clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);">
+  </div>
+
+  <!-- Puntos decorativos -->
+  <div class="absolute top-16 left-6 z-0 grid gap-3"
+       style="grid-template-columns: repeat(4, 10px);">
+    <div *ngFor="let d of dots"
+         style="width: 6px; height: 6px; border-radius: 50%; background: #ccc;">
+    </div>
+  </div>
+
+  <div #timelineSection class="relative z-10 max-w-7xl mx-auto">
+
+    <!-- Header con fade in -->
+    <div style="transition: opacity 800ms ease, transform 800ms ease;"
+         [style.opacity]="headerVisible ? '1' : '0'"
+         [style.transform]="headerVisible ? 'translateY(0)' : 'translateY(-24px)'">
+      <p style="font-size: 13px; font-weight: 700; letter-spacing: 3px;
+                text-transform: uppercase; color: #999;">
+        What I've done so far
+      </p>
+      <h2 style="font-family: 'Barlow Condensed', 'Arial Black', Impact, sans-serif;
+                 font-weight: 900; font-size: clamp(42px, 6vw, 72px);
+                 color: #111; margin-top: 6px; letter-spacing: -1px;">
+        Work Experience.
+      </h2>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative mt-20" style="padding-bottom: 40px;">
+
+      <!-- Línea vertical con animación de altura -->
+      <div class="absolute"
+           style="left: 50%; top: 0; width: 2px; transform: translateX(-50%); z-index: 1;
+                  background: linear-gradient(to bottom, #aaa, #555);
+                  transition: height 1000ms ease;"
+           [style.height]="lineVisible ? '100%' : '0%'">
+      </div>
+
+      <!-- Items -->
+      <div *ngFor="let exp of experiences; let i = index"
+           class="relative flex items-center w-full mb-20">
+
+        <!-- PAR: tarjeta viene desde la izquierda -->
+        <ng-container *ngIf="i % 2 === 0">
+
+          <div class="w-[45%] flex justify-end pr-8"
+               style="transition: opacity 700ms ease, transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);"
+               [style.opacity]="exp.visible ? '1' : '0'"
+               [style.transform]="exp.visible ? 'translateX(0)' : 'translateX(-120px)'">
+            <div style="background: #e8e6e2; border-radius: 12px; padding: 20px 28px;
+                        min-width: 260px; max-width: 340px;
+                        box-shadow: 4px 4px 16px rgba(0,0,0,0.08);">
+              <h3 style="font-weight: 900; font-size: 15px; letter-spacing: 2px;
+                         text-transform: uppercase; color: #111;">
+                {{ exp.title }}
+              </h3>
+              <p style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+                        color: #888; margin-top: 6px; font-weight: 600;">
+                {{ exp.company }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Flecha → -->
+          <div class="absolute z-10"
+               style="left: calc(50% - 54px); top: 50%; transform: translateY(-50%);
+                      transition: opacity 700ms ease;"
+               [style.opacity]="exp.visible ? '1' : '0'">
+            <span style="color: #666; font-size: 13px;">▶</span>
+          </div>
+
+          <!-- Círculo -->
+          <div class="absolute flex items-center justify-center z-20"
+               style="left: 50%; top: 50%; transform: translate(-50%, -50%);
+                      width: 52px; height: 52px; border-radius: 50%;
+                      background: #2d2d2d; border: 3px solid #555;
+                      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+                      transition: opacity 700ms ease, transform 700ms ease;"
+               [style.opacity]="exp.visible ? '1' : '0'"
+               [style.transform]="exp.visible ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0)'">
+            <img [src]="exp.logo" [alt]="exp.company"
+                 style="width: 26px; height: 26px; object-fit: contain; filter: brightness(10);" />
+          </div>
+
+          <!-- Fecha derecha -->
+          <div class="w-[55%] flex justify-start pl-20"
+               style="transition: opacity 700ms ease, transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);"
+               [style.opacity]="exp.visible ? '1' : '0'"
+               [style.transform]="exp.visible ? 'translateX(0)' : 'translateX(80px)'">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+                         text-transform: uppercase; color: #777;">
+              {{ exp.date }}
+            </span>
+          </div>
+
+        </ng-container>
+
+        <!-- IMPAR: tarjeta viene desde la derecha -->
+        <ng-container *ngIf="i % 2 !== 0">
+
+          <!-- Fecha izquierda -->
+          <div class="w-[45%] flex justify-end pr-20"
+               style="transition: opacity 700ms ease, transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);"
+               [style.opacity]="exp.visible ? '1' : '0'"
+               [style.transform]="exp.visible ? 'translateX(0)' : 'translateX(-80px)'">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+                         text-transform: uppercase; color: #777;">
+              {{ exp.date }}
+            </span>
+          </div>
+
+          <!-- Círculo -->
+          <div class="absolute flex items-center justify-center z-20"
+               style="left: 50%; top: 50%; transform: translate(-50%, -50%);
+                      width: 52px; height: 52px; border-radius: 50%;
+                      background: #2d2d2d; border: 3px solid #555;
+                      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+                      transition: opacity 700ms ease, transform 700ms ease;"
+               [style.opacity]="exp.visible ? '1' : '0'"
+               [style.transform]="exp.visible ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0)'">
+            <img [src]="exp.logo" [alt]="exp.company"
+                 style="width: 26px; height: 26px; object-fit: contain; filter: brightness(10);" />
+          </div>
+
+          <!-- Flecha ← -->
+          <div class="absolute z-10"
+               style="left: calc(50% + 40px); top: 50%; transform: translateY(-50%);
+                      transition: opacity 700ms ease;"
+               [style.opacity]="exp.visible ? '1' : '0'">
+            <span style="color: #666; font-size: 13px;">◀</span>
+          </div>
+
+          <!-- Tarjeta viene desde la derecha -->
+          <div class="w-[55%] flex justify-start pl-16"
+               style="transition: opacity 700ms ease, transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);"
+               [style.opacity]="exp.visible ? '1' : '0'"
+               [style.transform]="exp.visible ? 'translateX(0)' : 'translateX(120px)'">
+            <div style="background: #e8e6e2; border-radius: 12px; padding: 20px 28px;
+                        min-width: 260px; max-width: 340px;
+                        box-shadow: 4px 4px 16px rgba(0,0,0,0.08);">
+              <h3 style="font-weight: 900; font-size: 15px; letter-spacing: 2px;
+                         text-transform: uppercase; color: #111;">
+                {{ exp.title }}
+              </h3>
+              <p style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+                        color: #888; margin-top: 6px; font-weight: 600;">
+                {{ exp.company }}
+              </p>
+            </div>
+          </div>
+
+        </ng-container>
+
+      </div>
+
+      <!-- Nodo final Resume -->
+      <div class="relative flex items-center w-full">
+
+        <div class="w-[45%] flex justify-end pr-8">
+          <div style="background: #e8e6e2; border-radius: 12px; padding: 20px 28px;
+                      min-width: 260px; max-width: 340px;
+                      box-shadow: 4px 4px 16px rgba(0,0,0,0.08);
+                      display: flex; justify-content: center;">
+            <a href="#"
+               style="background: #111; color: #fff; padding: 12px 28px;
+                      border-radius: 8px; font-size: 12px; font-weight: 800;
+                      letter-spacing: 2px; text-transform: uppercase;
+                      text-decoration: none; display: flex; align-items: center; gap: 10px;">
+              My Resume
+              <i class="fa-solid fa-download"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Círculo final -->
+        <div class="absolute flex items-center justify-center z-20"
+             style="left: 50%; top: 50%; transform: translate(-50%, -50%);
+                    width: 52px; height: 52px; border-radius: 50%;
+                    background: #2d2d2d; border: 3px solid #555;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
+          <i class="fa-solid fa-file-lines" style="color: #fff; font-size: 18px;"></i>
+        </div>
+
+        <div class="w-[55%]"></div>
+      </div>
+
+    </div>
+  </div>
+</section>

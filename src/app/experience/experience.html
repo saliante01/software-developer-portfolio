@@ -1,0 +1,59 @@
+<section id="experience" class="relative py-24 px-6 md:px-16 overflow-hidden"
+         style="background: #1a1a1a;">
+
+  <!-- Fondo ciudad -->
+  <div class="absolute inset-0 z-0"
+       style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&auto=format&fit=crop&q=60');
+              background-size: cover; background-position: center;
+              filter: grayscale(100%) brightness(0.35);">
+  </div>
+
+  <div #sectionRef class="relative z-10 max-w-7xl mx-auto">
+
+    <!-- Header con fade in -->
+    <div style="transition: opacity 800ms ease, transform 800ms ease;"
+         [style.opacity]="headerVisible ? '1' : '0'"
+         [style.transform]="headerVisible ? 'translateY(0)' : 'translateY(-24px)'">
+      <p style="font-size: 13px; font-weight: 700; letter-spacing: 3px;
+                text-transform: uppercase; color: #aaa;">
+        My Skills
+      </p>
+      <h2 style="font-family: 'Barlow Condensed', 'Arial Black', Impact, sans-serif;
+                 font-weight: 900; font-size: clamp(42px, 6vw, 72px);
+                 color: #fff; margin-top: 6px; letter-spacing: -1px;">
+        Technologies.
+      </h2>
+    </div>
+
+    <!-- Fila 1 -->
+    <div class="mt-16 flex flex-wrap gap-6 justify-center">
+      <div *ngFor="let tech of techRow1"
+           class="transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+        <div style="width: 80px; height: 80px; border-radius: 50%;
+                    background: rgba(30,30,30,0.85);
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+                    display: flex; align-items: center; justify-content: center;
+                    border: 1px solid rgba(255,255,255,0.08);">
+          <img [src]="tech.icon" [alt]="tech.name"
+               style="width: 44px; height: 44px; object-fit: contain;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila 2 -->
+    <div class="mt-6 flex flex-wrap gap-6 justify-center">
+      <div *ngFor="let tech of techRow2"
+           class="transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+        <div style="width: 80px; height: 80px; border-radius: 50%;
+                    background: rgba(30,30,30,0.85);
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+                    display: flex; align-items: center; justify-content: center;
+                    border: 1px solid rgba(255,255,255,0.08);">
+          <img [src]="tech.icon" [alt]="tech.name"
+               style="width: 44px; height: 44px; object-fit: contain;" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

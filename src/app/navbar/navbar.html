@@ -1,0 +1,56 @@
+<nav class="w-full flex items-center py-5 fixed top-0 z-50 px-8 md:px-16 transition-all duration-300"
+     [ngClass]="{'bg-white/90 backdrop-blur-md shadow-sm border-b border-black/10': isScrolled, 'bg-transparent': !isScrolled}">
+  <div class="w-full flex justify-between items-center max-w-7xl mx-auto">
+
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-2" (click)="setActive('hero')">
+      <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="14" stroke="#111" stroke-width="2"/>
+        <line x1="16" y1="2" x2="16" y2="30" stroke="#111" stroke-width="2"/>
+        <line x1="2" y1="16" x2="30" y2="16" stroke="#111" stroke-width="2"/>
+        <path d="M8 8 Q16 14 24 8" stroke="#111" stroke-width="1.5" fill="none"/>
+        <path d="M8 24 Q16 18 24 24" stroke="#111" stroke-width="1.5" fill="none"/>
+      </svg>
+      <span style="font-size: 20px; font-weight: 700; color: #111; letter-spacing: 0.5px;">shaq</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="list-none hidden sm:flex flex-row gap-14">
+      <li *ngFor="let link of navLinks"
+          class="cursor-pointer transition-colors duration-200"
+          [ngClass]="activeLink === link.id ? 'text-[#111]' : 'text-[#bbb]'">
+        <a [href]="'#' + link.id"
+           (click)="setActive(link.id)"
+           style="font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: inherit;">
+          {{ link.title }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Navigation Button -->
+    <div class="sm:hidden flex flex-1 justify-end items-center">
+      <button (click)="toggleMenu()" class="focus:outline-none z-50" style="color: #111;">
+        <i class="fa-solid" [ngClass]="isMenuOpen ? 'fa-xmark' : 'fa-bars'" style="font-size: 24px;"></i>
+        <span class="sr-only">Menú</span>
+      </button>
+
+      <!-- Mobile Dropdown Menu -->
+      <div [ngClass]="isMenuOpen ? 'flex' : 'hidden'"
+           class="p-6 absolute top-20 right-0 mx-4 my-2 min-w-[160px] z-40 rounded-xl flex-col gap-4"
+           style="background: white; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+        <ul class="list-none flex flex-col gap-5 items-start">
+          <li *ngFor="let link of navLinks"
+              class="cursor-pointer"
+              [ngClass]="activeLink === link.id ? 'text-[#111]' : 'text-[#bbb]'"
+              (click)="setActive(link.id); toggleMenu()">
+            <a [href]="'#' + link.id"
+               style="font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: inherit;">
+              {{ link.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</nav>
