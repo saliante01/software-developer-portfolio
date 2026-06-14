@@ -13,9 +13,10 @@ export class Navbar {
   activeLink = 'hero';
 
   navLinks = [
-    { id: 'about', title: 'Sobre mí' },
-    { id: 'experience', title: 'Trayectoria' },
+    { id: 'hero', title: 'Inicio' },
+    { id: 'experience', title: 'Tecnologías' },
     { id: 'projects', title: 'Proyectos' },
+    { id: 'work', title: 'Experiencia' },
     { id: 'contact', title: 'Contacto' }
   ];
 
@@ -30,5 +31,13 @@ export class Navbar {
 
   setActive(id: string) {
     this.activeLink = id;
+  }
+
+  scrollTo(id: string) {
+    this.setActive(id);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

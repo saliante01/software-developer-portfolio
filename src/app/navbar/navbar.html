@@ -4,22 +4,14 @@
 
     <!-- Logo -->
     <a href="#hero" class="flex items-center gap-2" (click)="setActive('hero')">
-      <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="16" cy="16" r="14" stroke="#111" stroke-width="2"/>
-        <line x1="16" y1="2" x2="16" y2="30" stroke="#111" stroke-width="2"/>
-        <line x1="2" y1="16" x2="30" y2="16" stroke="#111" stroke-width="2"/>
-        <path d="M8 8 Q16 14 24 8" stroke="#111" stroke-width="1.5" fill="none"/>
-        <path d="M8 24 Q16 18 24 24" stroke="#111" stroke-width="1.5" fill="none"/>
-      </svg>
-      <span style="font-size: 20px; font-weight: 700; color: #000000; letter-spacing: 0.5px;">shaq</span>
+
     </a>
 
     <!-- Desktop Navigation -->
     <ul class="list-none hidden sm:flex flex-row gap-14">
       <li *ngFor="let link of navLinks"
           class="cursor-pointer text-[#111]">
-        <a [href]="'#' + link.id"
-           (click)="setActive(link.id)"
+        <a (click)="scrollTo(link.id); $event.preventDefault()"
            style="font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: inherit;">
           {{ link.title }}
         </a>
@@ -40,9 +32,8 @@
         <ul class="list-none flex flex-col gap-5 items-start">
           <li *ngFor="let link of navLinks"
               class="cursor-pointer text-[#111]"
-              (click)="setActive(link.id); toggleMenu()">
-            <a [href]="'#' + link.id"
-               style="font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: inherit;">
+              (click)="scrollTo(link.id); toggleMenu()">
+            <a style="font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: inherit;">
               {{ link.title }}
             </a>
           </li>

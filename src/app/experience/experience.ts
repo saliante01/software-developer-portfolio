@@ -17,6 +17,8 @@ export class Experience implements AfterViewInit {
   @ViewChild('sectionRef') sectionRef!: ElementRef;
 
   headerVisible = false;
+  row1Visible = false;
+  row2Visible = false;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -25,10 +27,19 @@ export class Experience implements AfterViewInit {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            this.headerVisible = true;
+            this.cdr.detectChanges();
+
             setTimeout(() => {
-              this.headerVisible = true;
+              this.row1Visible = true;
               this.cdr.detectChanges();
-            }, 0);
+            }, 300);
+
+            setTimeout(() => {
+              this.row2Visible = true;
+              this.cdr.detectChanges();
+            }, 900);
+
             observer.disconnect();
           }
         });
