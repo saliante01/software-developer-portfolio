@@ -101,7 +101,7 @@ export class Projects implements AfterViewInit {
     {
       name: 'CAMP MANAGEMENT PLATFORM — EXTREME ADVENTURE',
       description: 'Plataforma web integral para la gestión y administración de operaciones, inscripciones y logística de campamentos de verano en la ciudad de Pucón.',
-      image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&auto=format&fit=crop', // Imagen referencial de campamentos/naturaleza
+      image: '/extremeadventure.png', // Imagen referencial de campamentos/naturaleza
       icon: '/eaa.png', // Ajusta la ruta a su logo si corresponde
       sourceCodeLink: 'https://github.com',
       liveDemoLink: 'https://netlify.app',
