@@ -1,11 +1,14 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 interface WorkExp {
   title: string;
   company: string;
   date: string;
   logo: string;
+  svgIcon?: string;
+  safeSvg?: SafeHtml;
   visible: boolean;
 }
 
@@ -22,37 +25,65 @@ export class Workexperience implements AfterViewInit {
   headerVisible = false;
   lineVisible = false;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private sanitizer: DomSanitizer, private cdr: ChangeDetectorRef) {
+    this.experiences.forEach(exp => {
+      if (exp.svgIcon) {
+        exp.safeSvg = this.sanitizer.bypassSecurityTrustHtml(exp.svgIcon);
+      }
+    });
+  }
 
   dots = new Array(16);
 
-  experiences: WorkExp[] = [
+experiences: WorkExp[] = [
     {
-      title: 'Front-End Developer',
-      company: 'Cover Hunt',
-      date: 'Aug 2021 – Feb 2022',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg',
+      title: 'Desarrollador Principal & Arquitecto de Software',
+      company: 'Iniciativa de Innovación Académica y Tecnológica (Fase I+D)',
+      date: '2026 – Presente',
+      logo: '',
+      svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="4" rx="1"/>
+        <rect x="4" y="10" width="16" height="4" rx="1"/>
+        <rect x="5" y="17" width="14" height="4" rx="1"/>
+      </svg>`,
       visible: false
     },
     {
-      title: 'Mentor (Volunteer)',
-      company: 'Microverse',
-      date: 'Mar 2022 – May 2022',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
+      title: 'Desarrollador Backend (Desafío de Innovación)',
+      company: 'Cámara Chilena de la Construcción (CChC)',
+      date: 'Nov 2025',
+      logo: '/cchc.png',
+      svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="6" rx="8" ry="3"/>
+        <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/>
+        <path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3V12"/>
+      </svg>`,
       visible: false
     },
     {
-      title: 'Junior Software Engineer',
-      company: 'Kelhel',
-      date: 'May 2022 – Oct 2022',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
+      title: 'Desarrollador Full Stack',
+      company: 'Extreme Adventure Academy',
+      date: 'Abr 2025',
+      logo: '/extremeadventure.png',
+      svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12,2 22,7 12,12 2,7"/>
+        <polygon points="2,7 12,12 22,7 22,12 12,17 2,12"/>
+        <polygon points="2,12 12,17 22,12 22,17 12,22 2,17"/>
+      </svg>`,
       visible: false
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Diversity Cyber Council',
-      date: 'Sep 2022 – Present',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg',
+      title: 'Práctica Profesional II (Software Prototyping)',
+      company: 'Abstract Digital Works',
+      date: 'Feb 2025 – Mar 2025',
+      logo: '/abstract_digital.jpeg',
+      visible: false
+    },
+    {
+      title: 'Práctica Profesional I (Software Prototyping)',
+      company: 'FF Studios',
+      date: '2024',
+      logo: '/logo-ffstudios.png',
       visible: false
     }
   ];

@@ -1,0 +1,16 @@
+.mobile-dropdown {
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+}
+
+@media (max-width: 400px) {
+  .mobile-dropdown {
+    right: 8px !important;
+    left: 8px !important;
+    padding: 16px !important;
+  }
+
+  .nav-item a {
+    font-size: 12px !important;
+  }
+}
