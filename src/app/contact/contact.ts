@@ -26,44 +26,23 @@ export class Contact implements AfterViewInit {
   socials: SocialLink[] = [
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/tu-usuario',
+      url: 'https://www.linkedin.com/in/sebastian-aliante-poblete-92964a354/',
       icon: 'fa-brands fa-linkedin-in',
-      username: '/in/tu-usuario',
+      username: '/in/sebastian-aliante-poblete',
       visible: false
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/tu-usuario',
+      url: 'https://github.com/saliante01',
       icon: 'fa-brands fa-github',
-      username: '@tu-usuario',
-      visible: false
-    },
-    {
-      name: 'Instagram',
-      url: 'https://instagram.com/tu-usuario',
-      icon: 'fa-brands fa-instagram',
-      username: '@tu-usuario',
-      visible: false
-    },
-    {
-      name: 'X / Twitter',
-      url: 'https://x.com/tu-usuario',
-      icon: 'fa-brands fa-x-twitter',
-      username: '@tu-usuario',
+      username: '@saliante01',
       visible: false
     },
     {
       name: 'Email',
-      url: 'mailto:shaq.developer@gmail.com',
+      url: 'mailto:s.aliante01@ufromail.cl',
       icon: 'fa-solid fa-envelope',
-      username: 'shaq.developer@gmail.com',
-      visible: false
-    },
-    {
-      name: 'WhatsApp',
-      url: 'https://wa.me/56912345678',
-      icon: 'fa-brands fa-whatsapp',
-      username: '+56 9 1234 5678',
+      username: 's.aliante01@ufromail.cl',
       visible: false
     }
   ];

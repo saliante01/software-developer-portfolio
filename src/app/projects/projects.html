@@ -23,51 +23,53 @@
     <div class="hidden md:flex items-stretch gap-3 w-full mt-16"
          style="height: 560px;">
 
-      <div *ngFor="let project of projects; let i = index"
-           (click)="selectProject(i)"
-           class="relative cursor-pointer overflow-hidden transition-all duration-500 flex-shrink-0"
-           [style.transition-duration]="(!hasAnimated && activeIndex === i) ? '2000ms' : null"
-           [style.flex]="activeIndex === i ? '10 0 0%' : '1 0 0%'"
-           style="border-radius: 20px;
-                  border: 2px solid rgba(255,255,255,0.08);
-                  box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
+       <div *ngFor="let project of projects; let i = index"
+            (click)="selectProject(i)"
+            class="relative cursor-pointer overflow-hidden transition-all duration-500 flex-shrink-0"
+            [style.transition-duration]="(!hasAnimated && activeIndex === i) ? '2000ms' : null"
+            [style.flex]="activeIndex === i ? '10 0 0%' : '1 0 0%'"
+            style="border-radius: 20px;
+                   border: 2px solid rgba(255,255,255,0.08);
+                   box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
 
-        <img [src]="project.image" [alt]="project.name"
-             class="absolute inset-0 w-full h-full object-cover transition-all duration-500"
-             [style.filter]="activeIndex === i
-               ? 'brightness(0.6) grayscale(0%)'
-               : 'brightness(0.35) grayscale(100%)'" />
+         <img [src]="project.image" [alt]="project.name"
+              class="absolute inset-0 w-full h-full object-cover transition-all duration-500"
+              [style.filter]="activeIndex === i
+                ? 'brightness(0.6) grayscale(0%)'
+                : 'brightness(0.35) grayscale(100%)'" />
 
-         <div *ngIf="activeIndex !== i"
-              class="absolute inset-0 flex items-end justify-center pb-8"
-              style="z-index: 2;">
-            <!-- Icono en inactivo -->
-            <img *ngIf="project.icon"
-                 [src]="project.icon" [alt]="project.name + ' icon'"
-                 class="absolute top-3 left-3 w-10 h-10 rounded-lg z-3 object-contain"
-                 style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
-                        border: 1px solid rgba(255,255,255,0.2); padding: 3px;" />
-           <span style="color: #fff; font-weight: 900; font-size: 13px;
-                        letter-spacing: 3px; text-transform: uppercase;
-                        writing-mode: vertical-rl; text-orientation: mixed;
-                        transform: rotate(180deg); white-space: nowrap;">
-             {{ project.name }}
-           </span>
-         </div>
+          <div *ngIf="activeIndex !== i"
+               class="absolute inset-0 flex items-end justify-center pb-8"
+               style="z-index: 2;">
+             <!-- Icono en inactivo -->
+             <img *ngIf="project.icon"
+                  [src]="project.icon" [alt]="project.name + ' icon'"
+                  class="absolute top-3 left-3 w-10 h-10 rounded-lg z-3 object-contain"
+                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
+                         border: 1px solid rgba(255,255,255,0.2); padding: 3px;" />
+            <span style="color: #fff; font-weight: 900; font-size: 13px;
+                         letter-spacing: 3px; text-transform: uppercase;
+                         writing-mode: vertical-rl; text-orientation: mixed;
+                         transform: rotate(180deg); white-space: nowrap;">
+              {{ project.name }}
+            </span>
+          </div>
 
-         <div *ngIf="activeIndex === i"
-              class="absolute inset-0 flex flex-col justify-end p-7 transition-all duration-500"
-              style="z-index: 2;
-                     background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.25) 55%, transparent 100%);">
+          <div *ngIf="activeIndex === i"
+               class="absolute inset-0 flex flex-col justify-end p-7 transition-all duration-500"
+               style="z-index: 2;
+                      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.25) 55%, transparent 100%);">
 
-          <a [href]="project.sourceCodeLink" target="_blank"
-             (click)="$event.stopPropagation()"
-             class="absolute top-4 right-4 flex items-center justify-center transition-transform hover:scale-110"
-             style="width: 42px; height: 42px; border-radius: 50%;
-                    background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
-                    border: 1px solid rgba(255,255,255,0.2); z-index: 3;
-                    text-decoration: none;">
-            <i class="fa-brands fa-github text-white" style="font-size: 18px;"></i>
+           <a [href]="project.sourceCodeLink" target="_blank"
+              (click)="$event.stopPropagation()"
+              class="absolute top-4 right-4 flex items-center justify-center transition-transform hover:scale-110"
+              style="width: 42px; height: 42px; border-radius: 50%;
+                     background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
+                     border: 1px solid rgba(255,255,255,0.2); z-index: 3;
+                     text-decoration: none;">
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 16 16">
+               <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+             </svg>
           </a>
 
           <!-- Icono del proyecto -->
@@ -150,51 +152,53 @@
     <!-- ===== MOBILE: Vertical accordion ===== -->
     <div class="flex md:hidden flex-col gap-3 mt-10">
 
-      <div *ngFor="let project of projects; let i = index"
-           (click)="selectProject(i)"
-           class="relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-500"
-           [style.height]="activeIndex === i ? '520px' : '80px'"
-           style="border: 2px solid rgba(255,255,255,0.08);
-                  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-                  flex-shrink: 0;">
+       <div *ngFor="let project of projects; let i = index"
+            (click)="selectProject(i)"
+            class="relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-500"
+            [style.height]="activeIndex === i ? '520px' : '80px'"
+            style="border: 2px solid rgba(255,255,255,0.08);
+                   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+                   flex-shrink: 0;">
 
-        <!-- Imagen de fondo -->
-        <img [src]="project.image" [alt]="project.name"
-             class="absolute inset-0 w-full h-full object-cover transition-all duration-500"
-             [style.filter]="activeIndex === i
-               ? 'brightness(0.6) grayscale(0%)'
-               : 'brightness(0.35) grayscale(100%)'" />
+         <!-- Imagen de fondo -->
+         <img [src]="project.image" [alt]="project.name"
+              class="absolute inset-0 w-full h-full object-cover transition-all duration-500"
+              [style.filter]="activeIndex === i
+                ? 'brightness(0.6) grayscale(0%)'
+                : 'brightness(0.35) grayscale(100%)'" />
 
-        <!-- Nombre (inactivo) -->
-        <div *ngIf="activeIndex !== i"
-             class="absolute inset-0 flex items-center px-5 z-10">
-           <!-- Icono en inactivo mobile -->
-           <img *ngIf="project.icon"
-                [src]="project.icon" [alt]="project.name + ' icon'"
-                class="absolute top-3 left-3 w-8 h-8 rounded-lg z-3 object-contain"
-                style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
-                       border: 1px solid rgba(255,255,255,0.2); padding: 2px;" />
-          <span style="color: #fff; font-weight: 900; font-size: 14px;
-                       letter-spacing: 3px; text-transform: uppercase;">
-            {{ project.name }}
-          </span>
-        </div>
+         <!-- Nombre (inactivo) -->
+         <div *ngIf="activeIndex !== i"
+              class="absolute inset-0 flex items-center px-5 z-10">
+            <!-- Icono en inactivo mobile -->
+            <img *ngIf="project.icon"
+                 [src]="project.icon" [alt]="project.name + ' icon'"
+                 class="absolute top-3 left-3 w-8 h-8 rounded-lg z-3 object-contain"
+                 style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
+                        border: 1px solid rgba(255,255,255,0.2); padding: 2px;" />
+           <span style="color: #fff; font-weight: 900; font-size: 14px;
+                        letter-spacing: 3px; text-transform: uppercase;">
+             {{ project.name }}
+           </span>
+         </div>
 
-        <!-- Contenido activo -->
-        <div *ngIf="activeIndex === i"
-             class="absolute inset-0 flex flex-col justify-end p-6"
-             style="z-index: 2;
-                    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.25) 55%, transparent 100%);">
+         <!-- Contenido activo -->
+         <div *ngIf="activeIndex === i"
+              class="absolute inset-0 flex flex-col justify-end p-6"
+              style="z-index: 2;
+                     background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.25) 55%, transparent 100%);">
 
-           <!-- Github -->
-           <a [href]="project.sourceCodeLink" target="_blank"
-              (click)="$event.stopPropagation()"
-              class="absolute top-4 right-4 flex items-center justify-center"
-              style="width: 38px; height: 38px; border-radius: 50%;
-                     background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
-                     border: 1px solid rgba(255,255,255,0.2); z-index: 3;
+            <!-- Github -->
+            <a [href]="project.sourceCodeLink" target="_blank"
+               (click)="$event.stopPropagation()"
+               class="absolute top-4 right-4 flex items-center justify-center"
+               style="width: 38px; height: 38px; border-radius: 50%;
+                      background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
+                      border: 1px solid rgba(255,255,255,0.2); z-index: 3;
                      text-decoration: none;">
-             <i class="fa-brands fa-github text-white" style="font-size: 16px;"></i>
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" viewBox="0 0 16 16">
+               <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+             </svg>
            </a>
 
            <!-- Icono del proyecto (mobile) -->

@@ -31,7 +31,7 @@
          [style.opacity]="row1Visible ? '1' : '0'"
          [style.transform]="row1Visible ? 'translateX(0)' : 'translateX(-120px)'">
       <div *ngFor="let tech of techRow1"
-           class="transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+           class="relative transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
         <div style="width: 80px; height: 80px; border-radius: 50%;
                     background: rgba(30,30,30,0.85);
                     box-shadow: 0 8px 32px rgba(0,0,0,0.6);
@@ -39,6 +39,12 @@
                     border: 1px solid rgba(255,255,255,0.08);">
           <img [src]="tech.icon" [alt]="tech.name"
                style="width: 44px; height: 44px; object-fit: contain;" />
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap
+                    invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200"
+             style="background: rgba(20,20,20,0.95); color: #fff; border: 1px solid rgba(255,255,255,0.15);
+                    box-shadow: 0 8px 24px rgba(0,0,0,0.6);">
+          {{ tech.name }}
         </div>
       </div>
     </div>
@@ -49,7 +55,7 @@
          [style.opacity]="row2Visible ? '1' : '0'"
          [style.transform]="row2Visible ? 'translateX(0)' : 'translateX(120px)'">
       <div *ngFor="let tech of techRow2"
-           class="transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+           class="relative transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
         <div style="width: 80px; height: 80px; border-radius: 50%;
                     background: rgba(30,30,30,0.85);
                     box-shadow: 0 8px 32px rgba(0,0,0,0.6);
@@ -57,6 +63,12 @@
                     border: 1px solid rgba(255,255,255,0.08);">
           <img [src]="tech.icon" [alt]="tech.name"
                style="width: 44px; height: 44px; object-fit: contain;" />
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap
+                    invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200"
+             style="background: rgba(20,20,20,0.95); color: #fff; border: 1px solid rgba(255,255,255,0.15);
+                    box-shadow: 0 8px 24px rgba(0,0,0,0.6);">
+          {{ tech.name }}
         </div>
       </div>
     </div>
