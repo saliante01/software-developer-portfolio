@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { TranslatePipe } from '../pipes/translate.pipe';
 
 interface WorkExp {
   title: string;
@@ -14,7 +15,7 @@ interface WorkExp {
 
 @Component({
   selector: 'app-workexperience',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './workexperience.html',
   styleUrl: './workexperience.css',
 })
@@ -45,6 +46,18 @@ experiences: WorkExp[] = [
         <rect x="3" y="3" width="18" height="4" rx="1"/>
         <rect x="4" y="10" width="16" height="4" rx="1"/>
         <rect x="5" y="17" width="14" height="4" rx="1"/>
+      </svg>`,
+      visible: false
+    },
+    {
+      title: 'Desarrollador UX/UI Frontend',
+      company: 'Departamento de Innovación Académica y Tecnológica — IDEAUFO',
+      date: 'Jun 2025 – Oct 2025',
+      logo: '/idea_ufro.png',
+      svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+        <line x1="8" y1="21" x2="16" y2="21"/>
+        <line x1="12" y1="17" x2="12" y2="21"/>
       </svg>`,
       visible: false
     },

@@ -3,6 +3,18 @@
   overflow-y: auto;
 }
 
+.navbar-inner {
+  max-width: 68vw;
+  margin: 0 auto;
+}
+
+@media (max-width: 639px) {
+  .navbar-inner {
+    max-width: none;
+    margin: 0;
+  }
+}
+
 @media (max-width: 400px) {
   .mobile-dropdown {
     right: 8px !important;

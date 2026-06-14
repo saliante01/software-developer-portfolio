@@ -22,12 +22,12 @@
          [style.transform]="headerVisible ? 'translateY(0)' : 'translateY(-24px)'">
       <p style="font-size: 13px; font-weight: 700; letter-spacing: 3px;
                 text-transform: uppercase; color: #999;">
-        What I've done so far
+        {{ 'work.done' | translate }}
       </p>
       <h2 style="font-family: 'Barlow Condensed', 'Arial Black', Impact, sans-serif;
                  font-weight: 900; font-size: clamp(42px, 6vw, 72px);
                  color: #111; margin-top: 6px; letter-spacing: -1px;">
-        Work Experience.
+        {{ 'work.title' | translate }}
       </h2>
     </div>
 
@@ -49,20 +49,20 @@
         <!-- ===== MOBILE LAYOUT ===== -->
         <div class="flex md:hidden items-start gap-4 mb-8">
           <div class="flex flex-col items-center">
-            <div [style.width.px]="i >= 3 ? 60 : 44"
-                 [style.height.px]="i >= 3 ? 60 : 44"
+            <div [style.width.px]="i >= 4 ? 60 : 44"
+                 [style.height.px]="i >= 4 ? 60 : 44"
                  class="rounded-full bg-[#2d2d2d] border-[3px] border-[#555] flex items-center justify-center shadow-lg flex-shrink-0 z-20"
                  style="transition: opacity 700ms ease, transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);"
                  [style.opacity]="exp.visible ? '1' : '0'"
                  [style.transform]="exp.visible ? 'scale(1)' : 'scale(0)'">
               <ng-container *ngIf="exp.safeSvg; else imgMobile">
-                <div [innerHTML]="exp.safeSvg" [style.width.px]="i >= 3 ? 32 : 24" [style.height.px]="i >= 3 ? 32 : 24"></div>
+                <div [innerHTML]="exp.safeSvg" [style.width.px]="i >= 4 ? 32 : 24" [style.height.px]="i >= 4 ? 32 : 24"></div>
               </ng-container>
               <ng-template #imgMobile>
                 <img [src]="exp.logo" [alt]="exp.company"
-                     [style.width.px]="i >= 3 ? 36 : 22"
-                     [style.height.px]="i >= 3 ? 36 : 22"
-                     [style.borderRadius]="i === 3 ? '50%' : '0'"
+                     [style.width.px]="i >= 4 ? 36 : 22"
+                     [style.height.px]="i >= 4 ? 36 : 22"
+                     [style.borderRadius]="i === 4 ? '50%' : '0'"
                      style="object-fit: contain;" />
               </ng-template>
             </div>
@@ -124,8 +124,8 @@
               <!-- Flecha izq→círculo -->
               <span style="color: #666; font-size: 11px; position: absolute; left: 2px;">▶</span>
               <!-- Círculo -->
-              <div [style.width.px]="i >= 3 ? 72 : 52"
-                   [style.height.px]="i >= 3 ? 72 : 52"
+              <div [style.width.px]="i >= 4 ? 72 : 52"
+                   [style.height.px]="i >= 4 ? 72 : 52"
                    style="border-radius: 50%; background: #2d2d2d; border: 3px solid #555;
                           box-shadow: 0 4px 16px rgba(0,0,0,0.3);
                           display: flex; align-items: center; justify-content: center;
@@ -133,13 +133,13 @@
                           transition: transform 700ms ease;"
                    [style.transform]="exp.visible ? 'scale(1)' : 'scale(0)'">
                 <ng-container *ngIf="exp.safeSvg; else imgDesktopEven">
-                  <div [innerHTML]="exp.safeSvg" [style.width.px]="i >= 3 ? 36 : 26" [style.height.px]="i >= 3 ? 36 : 26"></div>
+                  <div [innerHTML]="exp.safeSvg" [style.width.px]="i >= 4 ? 36 : 26" [style.height.px]="i >= 4 ? 36 : 26"></div>
                 </ng-container>
                 <ng-template #imgDesktopEven>
                   <img [src]="exp.logo" [alt]="exp.company"
-                       [style.width.px]="i >= 3 ? 42 : 26"
-                       [style.height.px]="i >= 3 ? 42 : 26"
-                       [style.borderRadius]="i === 3 ? '50%' : '0'"
+                       [style.width.px]="i >= 4 ? 42 : 26"
+                       [style.height.px]="i >= 4 ? 42 : 26"
+                       [style.borderRadius]="i === 4 ? '50%' : '0'"
                        style="object-fit: contain;" />
                 </ng-template>
               </div>
@@ -177,8 +177,8 @@
                  style="transition: opacity 700ms ease;"
                  [style.opacity]="exp.visible ? '1' : '0'">
               <!-- Círculo -->
-              <div [style.width.px]="i >= 3 ? 72 : 52"
-                   [style.height.px]="i >= 3 ? 72 : 52"
+              <div [style.width.px]="i >= 4 ? 72 : 52"
+                   [style.height.px]="i >= 4 ? 72 : 52"
                    style="border-radius: 50%; background: #2d2d2d; border: 3px solid #555;
                           box-shadow: 0 4px 16px rgba(0,0,0,0.3);
                           display: flex; align-items: center; justify-content: center;
@@ -186,13 +186,13 @@
                           transition: transform 700ms ease;"
                    [style.transform]="exp.visible ? 'scale(1)' : 'scale(0)'">
                 <ng-container *ngIf="exp.safeSvg; else imgDesktopOdd">
-                  <div [innerHTML]="exp.safeSvg" [style.width.px]="i >= 3 ? 36 : 26" [style.height.px]="i >= 3 ? 36 : 26"></div>
+                  <div [innerHTML]="exp.safeSvg" [style.width.px]="i >= 4 ? 36 : 26" [style.height.px]="i >= 4 ? 36 : 26"></div>
                 </ng-container>
                 <ng-template #imgDesktopOdd>
                   <img [src]="exp.logo" [alt]="exp.company"
-                       [style.width.px]="i >= 3 ? 42 : 26"
-                       [style.height.px]="i >= 3 ? 42 : 26"
-                       [style.borderRadius]="i === 3 ? '50%' : '0'"
+                       [style.width.px]="i >= 4 ? 42 : 26"
+                       [style.height.px]="i >= 4 ? 42 : 26"
+                       [style.borderRadius]="i === 4 ? '50%' : '0'"
                        style="object-fit: contain;" />
                 </ng-template>
               </div>
@@ -239,7 +239,7 @@
                       border-radius: 8px; font-size: 12px; font-weight: 800;
                       letter-spacing: 2px; text-transform: uppercase;
                       text-decoration: none; display: flex; align-items: center; gap: 10px;">
-              My Resume
+              {{ 'work.resume' | translate }}
               <i class="fa-solid fa-download"></i>
             </a>
           </div>
@@ -271,7 +271,7 @@
                     border-radius: 8px; font-size: 11px; font-weight: 800;
                     letter-spacing: 2px; text-transform: uppercase;
                     text-decoration: none; display: flex; align-items: center; gap: 8px;">
-            My Resume
+            {{ 'work.resume' | translate }}
             <i class="fa-solid fa-download"></i>
           </a>
         </div>

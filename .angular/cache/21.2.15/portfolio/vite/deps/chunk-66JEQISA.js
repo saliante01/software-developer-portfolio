@@ -7,7 +7,7 @@ import {
   getDOM,
   parseCookieValue,
   setRootDomAdapter
-} from "./chunk-HDE3VBLT.js";
+} from "./chunk-B5GJ42UP.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_ID,
@@ -28,7 +28,6 @@ import {
   Injector,
   NgModule,
   NgZone,
-  Observable,
   Optional,
   PLATFORM_ID,
   PLATFORM_INITIALIZER,
@@ -46,9 +45,6 @@ import {
   Version,
   ViewEncapsulation,
   XSS_SECURITY_URL,
-  __objRest,
-  __spreadProps,
-  __spreadValues,
   _global,
   _sanitizeHtml,
   _sanitizeUrl,
@@ -61,11 +57,8 @@ import {
   bypassSanitizationTrustStyle,
   bypassSanitizationTrustUrl,
   computed,
-  concatMap,
   createPlatformFactory,
   encapsulateResourceError,
-  filter,
-  finalize,
   formatRuntimeError,
   forwardRef,
   inject,
@@ -73,8 +66,6 @@ import {
   linkedSignal,
   makeEnvironmentProviders,
   makeStateKey,
-  map,
-  of,
   performanceMarkFeature,
   platformCore,
   provideStabilityDebugging,
@@ -82,7 +73,6 @@ import {
   setClassMetadata,
   setDocument,
   signal,
-  switchMap,
   truncateMiddle,
   unwrapSafeValue,
   withDomHydration,
@@ -93,7 +83,19 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-DWICV4V4.js";
+} from "./chunk-KH7DKL2N.js";
+import {
+  Observable,
+  __objRest,
+  __spreadProps,
+  __spreadValues,
+  concatMap,
+  filter,
+  finalize,
+  map,
+  of,
+  switchMap
+} from "./chunk-PJVWDKLX.js";
 
 // node_modules/@angular/platform-browser/fesm2022/_dom_renderer-chunk.mjs
 var EventManagerPlugin = class {
@@ -4226,4 +4228,4 @@ export {
   provideClientHydration,
   VERSION
 };
-//# sourceMappingURL=chunk-RNZINQAU.js.map
+//# sourceMappingURL=chunk-66JEQISA.js.map

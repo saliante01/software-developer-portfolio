@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '../pipes/translate.pipe';
 
 interface SocialLink {
   name: string;
@@ -11,7 +12,7 @@ interface SocialLink {
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
@@ -39,7 +40,7 @@ export class Contact implements AfterViewInit {
       visible: false
     },
     {
-      name: 'Email',
+      name: 'Correo Electrónico',
       url: 'mailto:s.aliante01@ufromail.cl',
       icon: 'fa-solid fa-envelope',
       username: 's.aliante01@ufromail.cl',

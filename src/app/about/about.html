@@ -5,24 +5,19 @@
     <div>
       <p style="font-size: 13px; font-weight: 700; letter-spacing: 3px;
                 text-transform: uppercase; color: #999;">
-        Introduction
+        {{ 'about.intro' | translate }}
       </p>
       <h2 style="font-family: 'Barlow Condensed', 'Arial Black', Impact, sans-serif;
                  font-weight: 900; font-size: clamp(42px, 6vw, 72px);
                  color: #111; margin-top: 8px; letter-spacing: -1px;">
-        Overview.
+        {{ 'about.overview' | translate }}
       </h2>
     </div>
 
     <!-- Descripción -->
     <p style="margin-top: 20px; font-size: 17px; line-height: 1.85;
               color: #555; max-width: 680px;">
-      Soy estudiante de Ingeniería Civil Informática enfocado en el diseño y 
-      construcción de sistemas de software robustos, mantenibles y escalables. 
-      Me apasiona la arquitectura backend, la aplicación de patrones de diseño clásicos y 
-      la exploración de metodologías modernas como el Spec-Driven Design. Busco resolver 
-      problemas complejos mediante código limpio, estructurando soluciones con una fuerte 
-      base teórica y técnica.
+      {{ 'about.desc' | translate }}
     </p>
 
     <!-- Cards con animación -->
@@ -50,7 +45,7 @@
 
           <h3 style="color: #fff; font-size: 16px; font-weight: 700;
                      text-align: center; line-height: 1.4; letter-spacing: 0.3px;">
-            {{ service.title }}
+            {{ service.titleKey | translate }}
           </h3>
 
         </div>

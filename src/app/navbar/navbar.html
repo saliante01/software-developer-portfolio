@@ -1,34 +1,45 @@
-<nav class="w-full flex items-center py-5 fixed top-0 z-50 px-8 md:px-16 transition-all duration-300"
+<nav class="w-full flex items-center py-5 fixed top-0 z-[60] px-8 md:px-16 transition-all duration-300"
      [ngClass]="{'bg-white/90 backdrop-blur-md shadow-sm border-b border-black/10': isScrolled, 'bg-transparent': !isScrolled}">
-  <div class="w-full flex justify-between items-center max-w-7xl mx-auto">
 
-    <!-- Logo -->
-    <a href="#hero" class="flex items-center gap-2" (click)="setActive('hero')">
-      <span class="font-bold text-[#111]" style="font-size: clamp(14px, 2vw, 20px); letter-spacing: 1px;">SA</span>
-    </a>
+  <div class="navbar-inner w-full flex justify-between items-center gap-6 lg:gap-10">
 
-    <!-- Desktop Navigation -->
-    <ul class="list-none hidden sm:flex flex-row gap-6 xl:gap-12">
-      <li *ngFor="let link of navLinks" class="cursor-pointer text-[#111]">
+    <div class="flex items-center gap-3 shrink-0">
+      <a href="#hero" class="flex items-center gap-2" (click)="setActive('hero')">
+        <span class="font-bold text-[#111]" style="font-size: clamp(14px, 2vw, 20px); letter-spacing: 1px;">SA</span>
+      </a>
+
+      <button (click)="switchLang()"
+              style="font-size: 11px; font-weight: 800; letter-spacing: 1px; cursor: pointer;
+                     border: 1.5px solid #111; border-radius: 999px; padding: 5px 10px;
+                     text-transform: uppercase; backdrop-filter: blur(6px);"
+              [style.background]="lang === 'en' ? '#111' : 'rgba(255,255,255,0.35)'"
+              [style.color]="lang === 'en' ? '#fff' : '#111'">
+        {{ lang === 'es' ? 'EN' : 'ES' }}
+      </button>
+    </div>
+
+    <ul class="list-none hidden sm:flex flex-row flex-nowrap gap-4 lg:gap-7">
+      <li *ngFor="let link of navLinks" class="cursor-pointer text-[#111] shrink-0">
         <a (click)="scrollTo(link.id); $event.preventDefault()"
-           style="font-size: clamp(11px, 1.3vw, 14px); font-weight: 700; letter-spacing: 2px;
-                  text-transform: uppercase; text-decoration: none; color: inherit; cursor: pointer;">
-          {{ link.title }}
+           style="font-size: clamp(10px, 1vw, 13px); font-weight: 700; letter-spacing: 1px;
+                  text-transform: uppercase; text-decoration: none; color: inherit; cursor: pointer;
+                  white-space: nowrap;">
+          {{ link.titleKey | translate }}
         </a>
       </li>
     </ul>
 
-    <!-- Mobile Navigation Button -->
-    <div class="sm:hidden flex flex-1 justify-end items-center">
-      <button (click)="toggleMenu()" class="focus:outline-none" style="color: #111; position: relative; z-index: 60;">
-        <i class="fa-solid" [ngClass]="isMenuOpen ? 'fa-xmark' : 'fa-bars'" style="font-size: 24px;"></i>
-        <span class="sr-only">Menú</span>
-      </button>
-    </div>
-
   </div>
 
-  <!-- Mobile Dropdown — fuera del flex container, directo hijo del nav -->
+  <!-- Mobile button — fuera del contenedor limitado -->
+  <div class="sm:hidden flex flex-1 justify-end items-center absolute right-8">
+    <button (click)="toggleMenu()" class="focus:outline-none" style="color: #111; position: relative; z-index: 60;">
+      <i class="fa-solid" [ngClass]="isMenuOpen ? 'fa-xmark' : 'fa-bars'" style="font-size: 24px;"></i>
+      <span class="sr-only">{{ 'nav.menu' | translate }}</span>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown -->
   <div *ngIf="isMenuOpen" class="mobile-dropdown"
        style="position: fixed; top: 72px; right: 16px; left: 16px;
               background: white; border-radius: 16px;
@@ -43,7 +54,7 @@
         <a style="font-size: 14px; font-weight: 700; letter-spacing: 2px;
                   text-transform: uppercase; text-decoration: none;
                   color: #111; display: block;">
-          {{ link.title }}
+          {{ link.titleKey | translate }}
         </a>
       </li>
     </ul>

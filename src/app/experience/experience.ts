@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '../pipes/translate.pipe';
 
 interface Tech {
   name: string;
@@ -8,7 +9,7 @@ interface Tech {
 
 @Component({
   selector: 'app-experience',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './experience.html',
   styleUrl: './experience.css',
 })
