@@ -5,8 +5,11 @@ import { TranslatePipe } from '../pipes/translate.pipe';
 
 interface WorkExp {
   title: string;
+  titleKey: string;
   company: string;
+  companyKey: string;
   date: string;
+  dateKey: string;
   logo: string;
   svgIcon?: string;
   safeSvg?: SafeHtml;
@@ -39,8 +42,11 @@ export class Workexperience implements AfterViewInit {
 experiences: WorkExp[] = [
     {
       title: 'Desarrollador Principal & Arquitecto de Software',
+      titleKey: 'work.role.lead',
       company: 'Iniciativa de Innovación Académica y Tecnológica (Fase I+D)',
+      companyKey: 'work.company.innovation',
       date: '2026 – Presente',
+      dateKey: 'work.date.current',
       logo: '',
       svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="3" width="18" height="4" rx="1"/>
@@ -51,8 +57,11 @@ experiences: WorkExp[] = [
     },
     {
       title: 'Desarrollador UX/UI Frontend',
-      company: 'Departamento de Innovación Académica y Tecnológica — IDEAUFO',
+      titleKey: 'work.role.uxui',
+      company: 'Departamento de Innovación Académica y Tecnológica — IDEAUFRO',
+      companyKey: 'work.company.ideaufro',
       date: 'Jun 2025 – Oct 2025',
+      dateKey: 'work.date.ideaufro',
       logo: '/idea_ufro.png',
       svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -63,8 +72,11 @@ experiences: WorkExp[] = [
     },
     {
       title: 'Desarrollador Backend (Desafío de Innovación)',
+      titleKey: 'work.role.backend',
       company: 'Cámara Chilena de la Construcción (CChC)',
+      companyKey: 'work.company.cchc',
       date: 'Nov 2025',
+      dateKey: 'work.date.cchc',
       logo: '/cchc.png',
       svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <ellipse cx="12" cy="6" rx="8" ry="3"/>
@@ -75,8 +87,11 @@ experiences: WorkExp[] = [
     },
     {
       title: 'Desarrollador Full Stack',
+      titleKey: 'work.role.fullstack',
       company: 'Extreme Adventure Academy',
+      companyKey: 'work.company.extreme',
       date: 'Abr 2025',
+      dateKey: 'work.date.extreme',
       logo: '/extremeadventure.png',
       svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polygon points="12,2 22,7 12,12 2,7"/>
@@ -87,15 +102,21 @@ experiences: WorkExp[] = [
     },
     {
       title: 'Práctica Profesional II (Software Prototyping)',
+      titleKey: 'work.role.intern2',
       company: 'Abstract Digital Works',
+      companyKey: 'work.company.abstract',
       date: 'Feb 2025 – Mar 2025',
+      dateKey: 'work.date.abstract',
       logo: '/abstract_digital.jpeg',
       visible: false
     },
     {
       title: 'Práctica Profesional I (Software Prototyping)',
+      titleKey: 'work.role.intern1',
       company: 'FF Studios',
+      companyKey: 'work.company.ff',
       date: '2024',
+      dateKey: 'work.date.ff',
       logo: '/logo-ffstudios.png',
       visible: false
     }

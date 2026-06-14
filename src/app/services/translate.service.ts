@@ -39,12 +39,86 @@ const TRANSLATIONS: TranslationDict = {
     en: 'These projects demonstrate my expertise with practical examples of my work, including brief descriptions and links to code repositories and live demos.'
   },
   'projects.demo': { es: 'Demo en Vivo', en: 'Live Demo' },
+  'projects.architecture': { es: 'Enfoque Arquitectónico', en: 'Architectural Approach' },
+  'projects.contracts': { es: 'Contratos & Diseño', en: 'Contracts & Design' },
   'projects.name.analytics': { es: 'PLATAFORMA DE ANALÍTICA', en: 'ANALYTICS PLATFORM' },
   'projects.name.doctorado': { es: 'DOCTORADO COMUNICACIÓN — IDEAUFRO', en: 'PhD COMMUNICATION — IDEAUFRO' },
   'projects.name.trafico': { es: 'SIMULADOR DE TRÁFICO — CCHC', en: 'TRAFFIC SIMULATOR — CCHC' },
   'projects.name.camp': { es: 'PLATAFORMA DE GESTIÓN — EXTREME ADVENTURE', en: 'CAMP MANAGEMENT PLATFORM — EXTREME ADVENTURE' },
   'projects.name.prototypes': { es: 'PROTOTIPOS INTERACTIVOS — ABSTRACT DIGITAL', en: 'INTERACTIVE PROTOTYPES — ABSTRACT DIGITAL' },
   'projects.name.wind': { es: 'SIMULADOR DE ENERGÍA EÓLICA — FF STUDIOS', en: 'WIND ENERGY SIMULATOR — FF STUDIOS' },
+  'projects.desc.analytics': {
+    es: 'Ecosistema de analítica de aprendizaje y evaluación curricular técnica-profesional por competencias transversales, escalable y con versionamiento de evaluaciones locales.',
+    en: 'Learning analytics and technical-professional curriculum assessment ecosystem for cross-cutting competencies, scalable and with local assessment versioning.'
+  },
+  'projects.desc.doctorado': {
+    es: 'Refactorización integral y rediseño UX/UI del sistema web del Doctorado en Comunicación de la Universidad de La Frontera para optimizar la gestión académica.',
+    en: 'Full refactor and UX/UI redesign of the PhD in Communication web system at Universidad de La Frontera to optimize academic management.'
+  },
+  'projects.desc.trafico': {
+    es: 'Sistema de análisis e integración de datos de tráfico en tiempo casi real para la simulación interactiva y optimización de flujos vehiculares urbanos.',
+    en: 'Near-real-time traffic data analysis and integration system for interactive simulation and optimization of urban vehicle flows.'
+  },
+  'projects.desc.camp': {
+    es: 'Plataforma web integral para la gestión y administración de operaciones, inscripciones y logística de campamentos de verano en la ciudad de Pucón.',
+    en: 'Comprehensive web platform for managing operations, registrations, and logistics for summer camps in Pucón.'
+  },
+  'projects.desc.prototypes': {
+    es: 'Diseño y desarrollo autónomo de prototipos digitales interactivos en plataformas táctiles orientados a presentaciones comerciales para clientes B2B.',
+    en: 'Independent design and development of interactive digital prototypes on touch platforms for B2B commercial presentations.'
+  },
+  'projects.desc.wind': {
+    es: 'Diseño y construcción de un entorno virtual interactivo para la simulación física y visual de sistemas de generación de energía eólica.',
+    en: 'Design and construction of an interactive virtual environment for the physical and visual simulation of wind power generation systems.'
+  },
+  'projects.arch.analytics': {
+    es: 'Monolito modular con Arquitectura Hexagonal por capas. Base de datos aislada mediante múltiples esquemas independientes en PostgreSQL.',
+    en: 'Modular monolith with layered Hexagonal Architecture. Database isolation through multiple independent PostgreSQL schemas.'
+  },
+  'projects.arch.doctorado': {
+    es: 'Refactorización de código legado. Optimización de la estructura del frontend mediante componentes reutilizables y desacoplamiento de vistas.',
+    en: 'Legacy code refactoring. Frontend structure optimization through reusable components and decoupled views.'
+  },
+  'projects.arch.trafico': {
+    es: 'Consumo, normalización y exposición de fuentes de datos (Google Maps y Waze) mediante servicios backend asíncronos.',
+    en: 'Consumption, normalization, and exposure of data sources (Google Maps and Waze) through asynchronous backend services.'
+  },
+  'projects.arch.camp': {
+    es: 'Arquitectura Cliente-Servidor desacoplada. Backend centralizado para el control transaccional de registros y persistencia de datos.',
+    en: 'Decoupled client-server architecture. Centralized backend for transactional registration control and data persistence.'
+  },
+  'projects.arch.prototypes': {
+    es: 'Desarrollo autónomo de soluciones interactivas basadas en componentes y control de versiones bajo un flujo de integración continua.',
+    en: 'Independent development of component-based interactive solutions with version control under a continuous integration workflow.'
+  },
+  'projects.arch.wind': {
+    es: 'Implementación de físicas de simulación y gestión de estados lógicos concurrentes dentro del motor de ejecución gráfico.',
+    en: 'Implementation of simulation physics and concurrent logical state management inside the graphical runtime engine.'
+  },
+  'projects.contract.analytics': {
+    es: 'Domain Events (Spring) · Puertos y Adaptadores JPA · Migraciones con Flyway.',
+    en: 'Domain Events (Spring) · JPA Ports and Adapters · Flyway migrations.'
+  },
+  'projects.contract.doctorado': {
+    es: 'Diseño centrado en el usuario (DCU) · Prototipado UX/UI en Figma · Interfaces accesibles y flujos de navegación optimizados.',
+    en: 'User-centered design (UCD) · UX/UI prototyping in Figma · Accessible interfaces and optimized navigation flows.'
+  },
+  'projects.contract.trafico': {
+    es: 'Integración de REST APIs externas · Canalización de datos hacia entornos gráficos distribuidos.',
+    en: 'External REST API integration · Data pipelines into distributed graphical environments.'
+  },
+  'projects.contract.camp': {
+    es: 'APIs REST estructuradas · Validación de flujos de usuario en frontend · Modelamiento relacional de datos.',
+    en: 'Structured REST APIs · Frontend user-flow validation · Relational data modeling.'
+  },
+  'projects.contract.prototypes': {
+    es: 'Transformación de requerimientos funcionales en soluciones digitales mediante ciclos de iteración continua con supervisión técnica.',
+    en: 'Transformation of functional requirements into digital solutions through continuous iteration cycles with technical supervision.'
+  },
+  'projects.contract.wind': {
+    es: 'Modelamiento de variables técnicas en tiempo real y optimización de rendimiento para renderizado tridimensional interactivo.',
+    en: 'Real-time modeling of technical variables and performance optimization for interactive 3D rendering.'
+  },
   'projects.cat.fullstack': { es: 'FULL STACK', en: 'FULL STACK' },
   'projects.cat.uixfrontend': { es: 'UX/UI Y FRONTEND', en: 'UX/UI & FRONTEND' },
   'projects.cat.innovacion': { es: 'INNOVACIÓN Y BACKEND', en: 'INNOVATION & BACKEND' },
@@ -54,6 +128,24 @@ const TRANSLATIONS: TranslationDict = {
   'work.done': { es: 'Lo que he hecho hasta ahora', en: "What I've done so far" },
   'work.title': { es: 'Experiencia Laboral.', en: 'Work Experience.' },
   'work.resume': { es: 'Mi Currículum', en: 'My Resume' },
+  'work.role.lead': { es: 'Desarrollador Principal & Arquitecto de Software', en: 'Lead Developer & Software Architect' },
+  'work.role.uxui': { es: 'Desarrollador UX/UI Frontend', en: 'UX/UI Frontend Developer' },
+  'work.role.backend': { es: 'Desarrollador Backend (Desafío de Innovación)', en: 'Backend Developer (Innovation Challenge)' },
+  'work.role.fullstack': { es: 'Desarrollador Full Stack', en: 'Full Stack Developer' },
+  'work.role.intern2': { es: 'Práctica Profesional II (Prototipado de Software)', en: 'Professional Internship II (Software Prototyping)' },
+  'work.role.intern1': { es: 'Práctica Profesional I (Prototipado de Software)', en: 'Professional Internship I (Software Prototyping)' },
+  'work.company.innovation': { es: 'Iniciativa de Innovación Académica y Tecnológica (Fase I+D)', en: 'Academic and Technological Innovation Initiative (R&D Phase)' },
+  'work.company.ideaufro': { es: 'Departamento de Innovación Académica y Tecnológica — IDEAUFRO', en: 'Academic and Technological Innovation Department — IDEAUFRO' },
+  'work.company.cchc': { es: 'Cámara Chilena de la Construcción (CChC)', en: 'Chilean Chamber of Construction (CChC)' },
+  'work.company.extreme': { es: 'Extreme Adventure Academy', en: 'Extreme Adventure Academy' },
+  'work.company.abstract': { es: 'Abstract Digital Works', en: 'Abstract Digital Works' },
+  'work.company.ff': { es: 'FF Studios', en: 'FF Studios' },
+  'work.date.current': { es: '2026 – Presente', en: '2026 – Present' },
+  'work.date.ideaufro': { es: 'Jun 2025 – Oct 2025', en: 'Jun 2025 – Oct 2025' },
+  'work.date.cchc': { es: 'Nov 2025', en: 'Nov 2025' },
+  'work.date.extreme': { es: 'Abr 2025', en: 'Apr 2025' },
+  'work.date.abstract': { es: 'Feb 2025 – Mar 2025', en: 'Feb 2025 – Mar 2025' },
+  'work.date.ff': { es: '2024', en: '2024' },
   'contact.touch': { es: 'Ponte en contacto', en: 'Get in touch' },
   'contact.title': { es: 'Contacto.', en: 'Contact.' },
   'contact.desc': {

@@ -31,7 +31,7 @@
                    border: 2px solid rgba(255,255,255,0.08);
                    box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
 
-         <img [src]="project.image" [alt]="project.name"
+         <img [src]="project.image" [alt]="project.nameKey | translate"
               class="absolute inset-0 w-full h-full object-cover transition-all duration-500"
               [style.filter]="activeIndex === i
                 ? 'brightness(0.6) grayscale(0%)'
@@ -42,7 +42,7 @@
                style="z-index: 2;">
              <!-- Icono en inactivo -->
              <img *ngIf="project.icon"
-                  [src]="project.icon" [alt]="project.name + ' icon'"
+                   [src]="project.icon" [alt]="(project.nameKey | translate) + ' icon'"
                   class="absolute top-3 left-3 w-10 h-10 rounded-lg z-3 object-contain"
                   style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
                          border: 1px solid rgba(255,255,255,0.2); padding: 3px;" />
@@ -75,7 +75,7 @@
 
           <!-- Icono del proyecto -->
           <img *ngIf="project.icon"
-               [src]="project.icon" [alt]="project.name + ' icon'"
+               [src]="project.icon" [alt]="(project.nameKey | translate) + ' icon'"
                class="absolute top-4 left-4 w-20 h-20 rounded-xl z-3 object-contain"
                style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
                       border: 1px solid rgba(255,255,255,0.2); padding: 6px;" />
@@ -103,7 +103,7 @@
             <!-- Izquierda: descripción, stack, demo -->
             <div>
               <p style="font-size: 15px; color: #ccc; line-height: 1.6; max-width: 400px;">
-                {{ project.description }}
+                {{ project.descriptionKey | translate }}
               </p>
               <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px;">
                 <span *ngFor="let tech of project.stack"
@@ -131,17 +131,17 @@
             <div>
               <p style="font-size: 10px; font-weight: 700; letter-spacing: 2px;
                         text-transform: uppercase; color: #555; margin-bottom: 3px;">
-                Enfoque Arquitectónico
+                {{ 'projects.architecture' | translate }}
               </p>
               <p style="font-size: 13px; color: #bbb; line-height: 1.5; max-width: 220px;">
-                {{ project.architecturalApproach }}
+                {{ project.architecturalApproachKey | translate }}
               </p>
               <p style="font-size: 10px; font-weight: 700; letter-spacing: 2px;
                         text-transform: uppercase; color: #555; margin-bottom: 3px; margin-top: 14px;">
-                Contratos & Diseño
+                {{ 'projects.contracts' | translate }}
               </p>
               <p style="font-size: 13px; color: #bbb; line-height: 1.5; max-width: 220px;">
-                {{ project.contractsAndDesign }}
+                {{ project.contractsAndDesignKey | translate }}
               </p>
             </div>
           </div>
@@ -164,7 +164,7 @@
                    flex-shrink: 0;">
 
          <!-- Imagen de fondo -->
-         <img [src]="project.image" [alt]="project.name"
+         <img [src]="project.image" [alt]="project.nameKey | translate"
               class="absolute inset-0 w-full h-full object-cover transition-all duration-500"
               [style.filter]="activeIndex === i
                 ? 'brightness(0.6) grayscale(0%)'
@@ -175,7 +175,7 @@
               class="absolute inset-0 flex items-center px-5 z-10">
             <!-- Icono en inactivo mobile -->
             <img *ngIf="project.icon"
-                 [src]="project.icon" [alt]="project.name + ' icon'"
+                 [src]="project.icon" [alt]="(project.nameKey | translate) + ' icon'"
                  class="absolute top-3 left-3 w-8 h-8 rounded-lg z-3 object-contain"
                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
                         border: 1px solid rgba(255,255,255,0.2); padding: 2px;" />
@@ -208,7 +208,7 @@
 
            <!-- Icono del proyecto (mobile) -->
            <img *ngIf="project.icon"
-                [src]="project.icon" [alt]="project.name + ' icon'"
+                [src]="project.icon" [alt]="(project.nameKey | translate) + ' icon'"
                 class="absolute top-4 left-4 w-16 h-16 rounded-xl z-3 object-contain"
                 style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
                        border: 1px solid rgba(255,255,255,0.2); padding: 5px;" />
@@ -232,24 +232,24 @@
               {{ project.nameKey | translate }}
             </h3>
             <p style="font-size: 13px; color: #ccc; margin-top: 8px; line-height: 1.5;">
-              {{ project.description }}
+              {{ project.descriptionKey | translate }}
            </p>
 
            <!-- Detalles -->
            <div style="margin-top: 12px;">
              <p style="font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
                        text-transform: uppercase; color: #555; margin-bottom: 2px;">
-               Enfoque Arquitectónico
+               {{ 'projects.architecture' | translate }}
              </p>
              <p style="font-size: 12px; color: #bbb; line-height: 1.4; margin-bottom: 8px;">
-               {{ project.architecturalApproach }}
+               {{ project.architecturalApproachKey | translate }}
              </p>
              <p style="font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
                        text-transform: uppercase; color: #555; margin-bottom: 2px;">
-               Contratos & Diseño
+               {{ 'projects.contracts' | translate }}
              </p>
              <p style="font-size: 12px; color: #bbb; line-height: 1.4;">
-               {{ project.contractsAndDesign }}
+               {{ project.contractsAndDesignKey | translate }}
              </p>
            </div>
 
