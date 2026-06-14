@@ -8,11 +8,11 @@
     </a>
 
     <!-- Desktop Navigation -->
-    <ul class="list-none hidden sm:flex flex-row gap-14">
+    <ul class="list-none hidden sm:flex flex-row gap-6 xl:gap-12">
       <li *ngFor="let link of navLinks"
           class="cursor-pointer text-[#111]">
         <a (click)="scrollTo(link.id); $event.preventDefault()"
-           style="font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: inherit;">
+           style="font-size: clamp(11px, 1.3vw, 14px); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: inherit;">
           {{ link.title }}
         </a>
       </li>

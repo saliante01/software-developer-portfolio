@@ -7,9 +7,10 @@ import { Experience } from "./experience/experience";
 import { Projects } from "./projects/projects";
 import { Contact } from "./contact/contact";
 import { Workexperience } from "./workexperience/workexperience";
+import { EngineeringApproach } from "./engineering-approach/engineering-approach";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Hero, About, Experience, Projects, Contact, Workexperience],
+  imports: [RouterOutlet, Navbar, Hero, About, Experience, Projects, Contact, Workexperience, EngineeringApproach],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

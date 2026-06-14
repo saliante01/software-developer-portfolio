@@ -14,6 +14,7 @@ export class Navbar {
 
   navLinks = [
     { id: 'hero', title: 'Inicio' },
+    { id: 'engineering-approach', title: 'Enfoque' },
     { id: 'experience', title: 'Tecnologías' },
     { id: 'projects', title: 'Proyectos' },
     { id: 'work', title: 'Experiencia' },
