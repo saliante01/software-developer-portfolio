@@ -155,6 +155,32 @@ const TRANSLATIONS: TranslationDict = {
   'contact.linkedin': { es: 'LinkedIn', en: 'LinkedIn' },
   'contact.github': { es: 'GitHub', en: 'GitHub' },
   'contact.email': { es: 'Correo Electrónico', en: 'Email' },
+  'engineering.subtitle': { es: 'Fundamentos de Ingeniería', en: 'Engineering Fundamentals' },
+  'engineering.title': { es: 'Enfoque de Ingeniería.', en: 'Engineering Approach.' },
+  'engineering.card1.title': { es: 'Arquitectura & Diseño', en: 'Architecture & Design' },
+  'engineering.card1.subtitle': { es: 'FUNDAMENTOS DE ARQUITECTURA Y DDD', en: 'ARCHITECTURE FUNDAMENTALS & DDD' },
+  'engineering.card1.desc': {
+    es: 'Estoy desarrollando conocimientos en arquitectura de software, especialmente en Arquitectura Hexagonal y Domain-Driven Design. En mis proyectos intento separar la lógica de negocio de la infraestructura, organizar mejor las responsabilidades del código y comprender el uso de contextos delimitados para construir soluciones más ordenadas y fáciles de mantener.',
+    en: 'I am developing knowledge in software architecture, especially in Hexagonal Architecture and Domain-Driven Design. In my projects I try to separate business logic from infrastructure, better organize code responsibilities, and understand the use of bounded contexts to build cleaner, more maintainable solutions.'
+  },
+  'engineering.card2.title': { es: 'Ecosistema de Datos', en: 'Data Ecosystem' },
+  'engineering.card2.subtitle': { es: 'MODELADO Y ORGANIZACIÓN DE DATOS', en: 'DATA MODELING & ORGANIZATION' },
+  'engineering.card2.desc': {
+    es: 'He trabajado con bases de datos relacionales, principalmente PostgreSQL, aplicando conceptos de modelado, modularidad y separación de responsabilidades. También he utilizado migraciones versionadas con Flyway para gestionar cambios en la estructura de la base de datos de forma controlada durante el desarrollo.',
+    en: 'I have worked with relational databases, mainly PostgreSQL, applying concepts of modeling, modularity, and separation of concerns. I have also used versioned migrations with Flyway to manage database structure changes in a controlled way during development.'
+  },
+  'engineering.card3.title': { es: 'Simulación e Integración', en: 'Simulation & Integration' },
+  'engineering.card3.subtitle': { es: 'INTEGRACIÓN DE SISTEMAS', en: 'SYSTEMS INTEGRATION' },
+  'engineering.card3.desc': {
+    es: 'He participado en proyectos que combinan servicios desarrollados con Spring Boot y entornos interactivos creados con Unity. Mi experiencia incluye el consumo, procesamiento y exposición de datos mediante APIs, además de la comunicación entre distintos módulos de una solución de software.',
+    en: 'I have participated in projects that combine services developed with Spring Boot and interactive environments built with Unity. My experience includes consuming, processing, and exposing data through APIs, as well as communication between different modules of a software solution.'
+  },
+  'engineering.card4.title': { es: 'Automatización con IA', en: 'AI Automation' },
+  'engineering.card4.subtitle': { es: 'IA COMO APOYO AL DESARROLLO', en: 'AI AS DEVELOPMENT SUPPORT' },
+  'engineering.card4.desc': {
+    es: 'Utilizo herramientas de inteligencia artificial como apoyo para investigar conceptos, revisar alternativas de implementación, detectar posibles mejoras y documentar soluciones. Procuro validar manualmente las respuestas generadas y mantener el control sobre las decisiones técnicas y la calidad del código.',
+    en: 'I use artificial intelligence tools to research concepts, review implementation alternatives, identify potential improvements, and document solutions. I make sure to manually validate generated responses and maintain control over technical decisions and code quality.'
+  },
 };
 
 @Injectable({ providedIn: 'root' })
